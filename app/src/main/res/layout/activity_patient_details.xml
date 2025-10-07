@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7FAFF">
+
+    <!-- ===== HEADER (blue, same vibe as main) ===== -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#2196F3"
+        android:elevation="6dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:paddingHorizontal="12dp"
+            android:text="⬅️  Retour"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E88E5" />
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Dossier Patient"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/headerIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="👤"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <!-- ===== BOTTOM NAV (fixed) ===== -->
+    <RelativeLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
+
+        <Button
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/navPatients"
+            android:gravity="center"
+            android:text="🏠\nAccueil"
+            android:textSize="10sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2196F3" />
+
+        <Button
+            android:id="@+id/navPatients"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/navCalendar"
+            android:gravity="center"
+            android:text="👥\nPatients"
+            android:textSize="10sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2196F3" />
+
+        <Button
+            android:id="@+id/navCalendar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/navSettings"
+            android:gravity="center"
+            android:text="📅\nPlanning"
+            android:textSize="10sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2196F3" />
+
+        <Button
+            android:id="@+id/navSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:text="⚙️\nParamètres"
+            android:textSize="10sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2196F3" />
+    </RelativeLayout>
+
+    <!-- ===== CONTENT (between header & nav) ===== -->
+    <RelativeLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerLayout"
+        android:layout_above="@id/bottomNav"
+        android:padding="16dp">
+
+        <!-- Identity card -->
+        <RelativeLayout
+            android:id="@+id/cardIdentity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/patientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr. Virtual"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#0D47A1" />
+
+            <TextView
+                android:id="@+id/patientMeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/patientName"
+                android:layout_marginTop="6dp"
+                android:text="Âge: 45   •   ID: PAT-7842   •   Sexe: M"
+                android:textSize="14sp"
+                android:textColor="#455A64" />
+
+            <TextView
+                android:id="@+id/patientContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/patientMeta"
+                android:layout_marginTop="10dp"
+                android:text="Adresse: 12 Rue de la Santé, Paris\nTéléphone: +33 6 12 34 56 78\nEmail: dr.virtual@example.com"
+                android:textSize="14sp"
+                android:textColor="#455A64" />
+        </RelativeLayout>
+
+        <!-- Vitals -->
+        <RelativeLayout
+            android:id="@+id/cardVitals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardIdentity"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/vitalsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Signaux vitaux"
+                android:textStyle="bold"
+                android:textColor="#0D47A1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/vitalHR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vitalsTitle"
+                android:layout_marginTop="10dp"
+                android:text="BPM: 72"
+                android:textColor="#1B5E20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/vitalBP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/vitalHR"
+                android:layout_alignBaseline="@id/vitalHR"
+                android:layout_marginStart="24dp"
+                android:text="TA: 120/80"
+                android:textColor="#E65100"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/vitalTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/vitalBP"
+                android:layout_alignBaseline="@id/vitalHR"
+                android:layout_marginStart="24dp"
+                android:text="Temp: 36.8°C"
+                android:textColor="#1565C0"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- Clinical -->
+        <RelativeLayout
+            android:id="@+id/cardClinical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardVitals"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/clinicalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Problèmes et Allergies"
+                android:textStyle="bold"
+                android:textColor="#0D47A1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/conditions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/clinicalTitle"
+                android:layout_marginTop="8dp"
+                android:text="- HTA contrôlée\n- Hypercholestérolémie\n- Antécédents cardiaques familiaux"
+                android:textColor="#37474F"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/allergies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/conditions"
+                android:layout_marginTop="8dp"
+                android:text="Allergies: Pénicilline (⚠️)"
+                android:textColor="#BF360C"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <!-- Medications -->
+        <RelativeLayout
+            android:id="@+id/cardMeds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardClinical"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/medsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Traitements"
+                android:textStyle="bold"
+                android:textColor="#0D47A1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/meds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/medsTitle"
+                android:layout_marginTop="8dp"
+                android:text="- Atorvastatine 20 mg (soir)\n- Ramipril 5 mg (matin)\n- Vitamine D hebdomadaire"
+                android:textColor="#37474F"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <!-- Visits -->
+        <RelativeLayout
+            android:id="@+id/cardVisits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardMeds"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/visitsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Visites récentes"
+                android:textStyle="bold"
+                android:textColor="#0D47A1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/visits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/visitsTitle"
+                android:layout_marginTop="8dp"
+                android:text="- 15 Nov 2024: Contrôle annuel\n- 10 Mai 2024: Labo\n- 03 Déc 2023: Cardio"
+                android:textColor="#37474F"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
